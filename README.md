@@ -6,4 +6,4 @@ with someone else who can help troubleshoot any problems you may encounter. That
 is provided.
 
 These files are freely distributed under fair academic use. They should not be distributed for any sort of compensation without
-express permission from the Author.
+express permission from the Author- Ben Reuveni ([at] g mail).
