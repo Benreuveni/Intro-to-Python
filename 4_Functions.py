@@ -1,3 +1,5 @@
+__author__ = "Ben Reuveni - ben.reuveni@gmail.com"
+
 from psychopy import visual, core, data, event, logging, gui, sound
 
 '''
@@ -13,7 +15,7 @@ Humans on the other hand, have specialized "modules" that do different things. F
 you call on the "digestive tract" module which then calls individual modules like "mouth", "stomach",
 "small / large intestines" etc.
 
-OK, enough biology. Let's get back to Functions. Functions are self-contained untis of code that perform operations.
+OK, enough biology. Let's get back to Functions. Functions are self-contained units of code that perform operations.
 In this context, self-contained means that the function is almost like a separate file of code. It really only knows
 about things inside the function and unless told, will not impact anything outside of itself.
 
@@ -55,7 +57,7 @@ be wondering what would happen if you added a "print" command to line 29. Go ahe
 
 The reason that happens is because we did not tell the function to return anything.
 
-Now let's say that we want the functioon to return a value "a", but we want to use it somewhere else. We could use
+Now let's say that we want the function to return a value "a", but we want to use it somewhere else. We could use
 selfContainedFunction() in the place of "a" throughout our code, but that seems unwieldy. Instead, we can do the following:
 '''
 
@@ -78,11 +80,11 @@ def selfContainedFunction():
 #selfContainedFunction()
 
 '''
-Now, functions are extremely useful because they allow you to segment your code in such as way that each operation
+Now, functions are extremely useful because they allow you to segment your code in such a way that each operation
 you wish to perform happens in a module that you can reuse instead of duplicating code every time you want to do that
 operation.
 
-The usefulness of Functions is further expanded be the fact that they can accept inputs (called arguments).
+The usefulness of Functions is further expanded because of the fact that they can accept inputs (called arguments).
 For example:
 '''
 
@@ -128,7 +130,7 @@ def secondFunction(c,d):
 '''
 Let's break that down:
 
-We define 2 functions, each of which take arguments, however the first function doesn't use "c" except as a passthrough.
+We define 2 functions, each of which take arguments, however the first function doesn't use "c" except as a pass-through.
 The first function then calls a second function with 2 arguments and is told to "return" the output of that second
 function.
 
@@ -153,13 +155,13 @@ Create a function that takes 3 arguments:
 3) whether or not to print the result
 
 The function should check to see whether the keypress matches the correct response (that is housed in a list that you
-indexed in order to pass as an argument, and then both prints, and outputs a new variable that is either 0 for
+indexed in order to pass as an argument) and then both prints, and outputs a new variable that is either 0 for
 incorrect or 1 for correct.
 
-Hint: This will involve at least a while loop and a function.
+Hint: This will involve at least a few IF statements and a function.
 
-Don't forget: 1) to call the function at the end. 2) to make sure your While look (hint!) has an exit clause!
-              3) to create a window.
+Don't forget to call the function at the end.
+
 
 Feel free to use what you've learned in "If statements" BUT I really really recommend you do NOT cut and paste it. Instead
 a much better way to cement your understanding is to recode it all from nothing.
@@ -170,7 +172,7 @@ a much better way to cement your understanding is to recode it all from nothing.
 
 '''
 Great! Now that we have a function that accepts input, matches it and spits out a "grade" , we can simply call that
-function anywhere we like instead of dumping all that code everywhere we may need a "grade". Much elegant!
+function anywhere we like instead of dumping all that code everywhere we may need a "grade". Much elegant! So Code!
 
 Let's try something new:
 
@@ -198,9 +200,9 @@ woohoo = sound.SoundPygame(value = 'Woohoo.wav')
 
 '''
 The "textStim", "imageStim" and "correctSound" are arbitrary names I gave to a particular object, in this case,
-an TextStim, ImageStim and SoundStim.
+a TextStim, ImageStim and SoundStim.
 
-Once they are defined, we can call them whereever and however many times we like. We can also modify them "on the fly"
+Once they are defined, we can call them wherever and however many times we like. We can also modify them "on the fly"
 
 There are several ways to draw stuff to the window depending on whether you want it to be continuously drawn, or
 drawn for a single frame, etc. Also, it is important to note that PsychoPy utilizes a buffer space. You can think
@@ -208,11 +210,12 @@ of a buffer space as an area of memory that is "visually hidden" from the user t
 it so that we don't run into situations where we want to draw something but it isn't ready yet for whatever reason.
 
 Let's take a look:
+(make sure you've uncommented line 183 and 184)
 '''
 
- # textStim.setAutoDraw(True)
+ # imageStim.setAutoDraw(True)
  # core.wait(2) # this command just tells PsychoPy "Don't do ANYTHING for the next X seconds, then carry on as normal"
- # textStim.setAutoDraw(False)
+ # imageStim.setAutoDraw(False)
 
 '''
 Did anything show up aside from the window?
@@ -231,8 +234,8 @@ We can easily accomplish this with the following command: textStim.text = "Hello
 
 Add that command right before you tell PsychoPy to draw the text stim.
 
-Next, we may also want to play a sound. This is done with the object.play() command. Try and add a command to the above
-code that will also play a sound for us. The sounnd duration is currently set at 0.5s.
+Next, we may also want to play a sound. This is done with the .play() command. Try and add a command to the above
+code that will also play a sound for us. The sound duration is currently set at 0.5s.
 
 Note that while this sound is currently set to a particular Hz, we can also point it to a sound file like so:
 
@@ -252,13 +255,13 @@ an image for X seconds.
 Here are the parameters:
 
 Which image to draw will come from an array of images. Instead of creating an ImageStim for every image you want to
-show, find a way to change the existing ImageStim to show a different image each time.
+show, find a way to change the existing ImageStim to show a different image each time. Hint: Remember how we changed the text?
 
 So the For-loop will dictate how many images you will show, and it will also dictate which image to show. The for-loop
 should call a function that actually shows the image.
 
-The function should take arguments that control whether we're drawing an ImageStim or TextStim, and how long to display' \
-'it for.
+The function should take arguments that control whether we're drawing an ImageStim or TextStim, and how long to display
+it for.
 '''
 
 # code goes here #

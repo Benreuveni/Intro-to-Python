@@ -1,3 +1,5 @@
+__author__ = "Ben Reuveni - ben.reuveni@gmail.com"
+
 import math, core, event, clock, os
 
 '''
@@ -12,9 +14,9 @@ import math, core, event, clock, os
  of how to create a GUI box in the Stroop Experiment.py file you can use). If you're not feeling fancy, it's enough
  to simply feed the arguments to the function when you call it.
 
- Instead of firing radiation, and spinning plates of food, our microwave is simply going to print
+ Instead of firing non-ionizing radiation, and spinning plates of food, our microwave is simply going to print
  the current settings (clock time & power level) one time when it starts,
- and then "time remaining: ", and "ON" when working.
+ and then "time remaining: ", and "ON" when working and finally, "Bon Appetit!" when done
 
  It's fine for the Time Remaining to be in arbitrary units OR if you're feeling ambitious, have it print the actual time
  remaining in seconds (hint: this will require a clock check and some conditional logic).

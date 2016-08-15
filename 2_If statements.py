@@ -1,8 +1,10 @@
+__author__ = "Ben Reuveni - ben.reuveni@gmail.com"
+
 '''
  Logic is the bread and butter of machine states.
- Everything we do with computers rests on formal logic and Boolean notation.
+ Everything we do with computers rests on formal logic and Boolean notation (and / or / not, etc).
 
- The if / elif / else is one of the most powerful tools in your arsenal.
+ The if / elif / else operators are some of the most powerful tools in your arsenal.
  You can think of them as a set of conditional triggers.
 
  if <so and so is true>:
@@ -11,7 +13,7 @@
    <do Y>
  elif <so and so is true>:
    <do Y2>
- else <if none of the previous things are true>
+ else #if none of the previous things are true.
    <do Z>
 
  Let's try and create our own If statement!
@@ -55,16 +57,20 @@ else:
 # else:
 #     print "I'm confused!"
 
-# The computer came to the first IF and it evaluated to "true", it then evaluated each successive IF until it was done.
+'''
+ The computer came to the first IF and it evaluated to "true", it then evaluated each successive IF until it was done
+ or it encountered a condition that evaluates to False.
 
-# In this example, what would happen if the seoond or third nested if failed? Try and break it to get a different print.
-# Note that the "elif and the else" in this case are not evaluated since the first If is true.
+ In this example, what would happen if the second or third nested if failed? Try and break it to get a different print.
+ Note that the "elif and the else" in this case are not evaluated since the first If is true all the way down.
 
-#Ok! Let's try and make a "grading" If statement for our experiment!
+ Ok! Let's try and make a "grading" If statement for our experiment!
+'''
 
 response = 1
-label = 2
+label = 1
 show = 1
+
 
 '''
  I have set up 3 variables for you that are currently static, but will eventually be pulled from either
@@ -73,14 +79,19 @@ show = 1
  Let's make some logic that will evaluate whether or not the response is the same as the label.
  Based on the outcome of that evaluation, set a new variable called "feedback" to either 0 or 1.
 
- Then based on the value of "show" (0/1), print out "correct" or incorrect.
+ Then based on the value of "show" (0/1), print out "correct" or "incorrect".
 '''
 
 # code goes here #
 
 
+'''
+ Woot! Well done! You now have an automated way of grading user responses in "real time".
 
-# Woot! Well done! You now have an automated way of grading user responses in "real time".
+ Next, make a new IF statement that checks whether the "current time" is outside our "time window"
+ If it is, print something to the effect of "Too slow!" and create a new variable called "timedOut" and set it to 1.
+ If it isn't, print something to the effect of "all good". Set "timedOut" to 0.
+'''
 
 startTime = 0
 timeOut = 2
@@ -88,19 +99,14 @@ endTime = startTime + timeOut
 
 currentTime = 1
 
-'''
- Next, make a new IF statement that checks to see the current time is outside our "time window"
- If it is, print something to the effect of "Too slow!" and create a new variable called "timedOut" and set it to 1.
- If it isn't, print something to the effect of "all good". Set timedOut to 0.
-'''
-
 # code goes here#
+
 
 '''
  Lastly, let's talk about Boolean operators (AND, OR)
  These arguments are useful if we want to make complex conditionals:
- "Only trigger IF x AND y are True"
- "Only trigger IF x OR y are True"
+ "Only trigger if x AND y are True"
+ "Only trigger if x OR y are True"
 
  NOTE: These are "short-circuit" operators meaning that the second statement is ONLY evaluated if the first one is True
 

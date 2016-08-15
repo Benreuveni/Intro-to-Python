@@ -1,13 +1,15 @@
+__author__ = "Ben Reuveni - ben.reuveni@gmail.com"
+
 import math # this pulls the "math" module into memory and allows us to use all of its functions (like the value of Pi).
 
 '''
  Variables are sections of memory that can hold data. This is the basis of nearly everything else we're likely to do.
 
- In Python, variable names are restricted to strings. A string is any combination of characters
+ In Python, variable names are restricted to 'strings'. A string is any combination of characters
  (not numbers - unless forced). So, we can name our variables anything from "x" to "stimTrialTimeout".
 
  When creating variables, it is customary to write in "camelBack" notation. Your first word is all lowercase, and
- each subsequent word has its fist letter capitalized.
+ each subsequent word has its fist letter capitalized. Another popular syntax is the use of '_' such as camel_back.
 
  Also, try and be very explicit as to what the variable is / is used for. You may find it obvious while coding, but
  10 months from now you're going to wish you did.
@@ -22,11 +24,12 @@ a = 2
 #print a
 
 x = "24th letter of the English alphabet" # notice that we've included numbers in our string, but since they are between
-#print x                                  # " " they are *forced* into a string.
+                                          # " " they are *forced* into a string.
+#print x
 
 stimTimeout = 2.25 # it can be a number as well.
 
-# Note that since we have made "stimTimeout" literally equal to a number, we can then do math with that variable
+# Note that since we have made "stimTimeout" literally equal to a number, we can then do math with that variable.
 
 #print ((stimTimeout + 5) / stimTimeout) * math.pi
 
@@ -72,8 +75,8 @@ answer = "4" # setup a variable that holds a STRING "4" *not a number*
 #print "the answer to the above is " + 2
 
 '''
- This will fail. The reason it fails is because you're trying to mix between strings and numbers.
- We can tell Python to force 2 into a string with the str() command. Add a # to comment the failed print command.
+ This last print failed. The reason it failed is because we were trying to mix between strings and numbers.
+ We can tell Python to force 2 into a string with the str() command. (Add a # to comment the failed print command.)
 '''
 
 #print "the answer to the above is " + str(2)
@@ -114,34 +117,39 @@ denominator = 3
 
 #print numerator % denominator != 0 # evaluates to False because 3 divides into 9 exactly 3 times with a remainder of 0
 
-# let's talk about some useful commands you are likely to use.
+''' let's talk about some useful commands you are likely to use.
 
-# len(object) returns the length of the object passed.
+    len(object) returns the length of the object passed.
+'''
 
 q = "hello"
 L1 = [1,2,3] # don't worry about what [] are just yet. They're lists!
-len('hello') # returns 5 because "Hello" is 5 letters long.
+len('hello') # returns 5 because "hello" is 5 letters long.
 len(q) # returns 5 because q is literally equal to "Hello", and that is 5 letters long.
 len(L1) # returns 3 because L1 has 3 items in it.
 
-# array.append
+'''
+ array.append adds whatever it is we are appending to the end of the array (it becomes the last thing).
+'''
 
 a = []
 #print a
 a.append(1)
+#print a
+a.append(2)
 #print a
 
 '''
 ##### Before we move on to dictionaries, let's cover indexing! #####
 
  Indexing is exactly what it sounds like. When we have a list, we may want to reference a particular value in that list.
- For example, let's say that we want to print just the "b" in L2'. There are 3 very important things to keep in mind
+ For example, let's say that we want to print just the "b" in 'L2'. There are 3 very important things to keep in mind
  when indexing in Python.
 
  1) Python is base 0 (Zero) which means that the first item in any list is in position 0, not 1!
     So a list with 10 items looks like this in terms of index position [0,1,2,3,4,5,6,7,8,9]. Remember this :)
 
- 2) Python is a non-inclusive counter. Meaning, it starts from the number you indicate, and goes up *BUT NOT INCLUDING*
+ 2) Python is a non-inclusive counter. Meaning, it starts from the number you indicate, and goes up to *BUT NOT INCLUDING*
     the end number. For example: telling Python to count from 1 to 10 will yield 1,2,3,4,5,6,7,8,9
 
  3) In a 2D array (X columns and Y rows), we index ROWS then COLUMNS (Y,X notation). Weird, but so.
@@ -161,22 +169,21 @@ a.append(1)
 
 # Just to be safe, let's examine a 3D array (now without glasses!)
 
-L6 = [ [ [1,2,3], [4,5,6], [7,8,9] ], ['a','b','c'],['d','e','f'] ]
+L6 = [ [ [ [1,2,3], [4,5,6], [7,8,9] ], [ ['a','b','c'],['d','e','f'] ] ] ]
 
 '''
 # Sadly, I can't depict a 3D array here, but just think of it as cartesian coordinates. (Z,Y,X)
 
  Consider what is happening here. Don't worry if you feel a bit lost with all the []s going on.
  The outermost [] captures the whole array.
- the next set of [] captures both the numbers and the letters.
- the next set of [] captures only the numbers.
+ the next set of [] captures either the numbers or the letters. Hint: Try [0][0] and [0][1]. Can you predict which command will print letters? Numbers?
  finally, the innermost [] captures each set of numbers or letters.
 
  Take a moment a play around with this print line and indexing. It is unbelievably important that you be comfortable
  with indexing and navigating lists and arrays. Otherwise, you may end up pointing to a wrong answer in a grading script!
 
  The indexing syntax is the same as for a 2D array. The first [] points to the outermost division of groupings
- the next [] points to the next level in, and the final (because it's only a 3D array) points to the innermost grouping.
+ the next [] points to the next level in, and so on.
 
  How would you tell it to print:
 
@@ -194,20 +201,22 @@ L6 = [ [ [1,2,3], [4,5,6], [7,8,9] ], ['a','b','c'],['d','e','f'] ]
                                    ###### Dictionaries ######
 '''
 
-D1 = {1: a, 'coffee': "GIMME!"}
+D1 = {2: a, 'coffee': "GIMME!"}
 
 '''
- This is a dictionary. Its syntax is { item: definition, item: definition, etc. } just like a real dictionary!
+ This is a dictionary. Its syntax is {key: value, key: value}, etc.  just like a real dictionary!
 
- So if we reference this dictionary with the number 1, it will return the definition of 1 that we set up.
+ So if we reference this dictionary with the key 2, it will return the value of 2 that we set up.
  Dictionaries are arbitrary, meaning they can hold anything that a variable can hold.
 
- In this case "a". Try and guess what this will print out! Think carefully!
+ In this case "2". Try and guess what this will print out!
+ Note that this looks very similar to list indexing, but it is importantly different! Here, we are
+ not referencing the Position of an item in our dictionary, but rather providing a Key that returns a Value.
 '''
-#print D1[a]
+#print D1[2]
 
 '''
- Dictionaries differ from lists in that you can use it to map several variables to a single one.
+ Dictionaries differ from lists in that you can use it to map several Keys to a single Value.
  for example:
 '''
 
@@ -216,7 +225,7 @@ D2 = {1: 10, 2:10, 3:10}
 
 '''
  Notice that this looks a lot like indexing, and it is! But it is not the same as indexing lists.
- Here, the index does not point to a particular position, but rather to a particular value.
+ Here, the index does not point to a particular position, but rather to a particular Key.
 
  Remember that Python is base 0 (zero). D2 has 3 items in it so the positions would be 0,1,2
  If we were indexing position, D2[3] would return an error since there is no just position.
@@ -239,9 +248,9 @@ D3 = {'rt': a, 'response': None, 'label': L2[1], 'stimID': L6[0][0][0]}
 # Try and print out various items.
 #print D3
 
-# Can you reassign "rt" to be 42? Hint: Consider what value you want, and where you want to store it.
+# Can you reassign "rt" to be 42? Hint: Consider what value you want, and what Key you want to store it with.
 
-# code goes here#
+# code goes here #
 
 '''
  Now, you can see how we might use a dictionary to store information we want and reference it later. It's a nice

@@ -1,3 +1,5 @@
+__author__ = "Ben Reuveni - ben.reuveni@gmail.com"
+
 from psychopy import visual, core, data, event, logging, gui, sound
 
 
@@ -12,14 +14,11 @@ from psychopy import visual, core, data, event, logging, gui, sound
 win = visual.Window(size=(700, 700), fullscr=False, screen=0, allowGUI=False, monitor=u'testMonitor',
                      allowStencil=False, color=[0,0,0], colorSpace=u'rgb', units='cm')
 
-
-# Once we've defined a window, we will need to tell each thing we want to draw to the screen to use That window.
-
 '''
+ Once we've defined a window, we will need to tell each thing we want to draw to the screen to use That window.
+
  Now that we understand IF statements, we can move on to loops.
-
  Imagine you have an operation, but you want it to run more than once. This is where FOR and WHILE loops come in!
-
  Let's start with FOR loops. A FOR loop is a framework that executes arbitrary code an arbitrary *but FINITE* number of times.
 
  For example:
@@ -38,7 +37,7 @@ for bob in range(10):
  the second time around, x == 2 and so on through "range(10)"
 
  The "range(start,stop)" command is a quick way of saying "I want all the numbers in this range".
- Note that when we want to start from 0, we can omit the start argument since it's obvious.
+ Note that when we want to start from 0, we can omit the start argument since it's obvious and implied.
  Try and print out all number from 1 to 8 including 8.
 '''
 
@@ -78,13 +77,13 @@ counter = 0
 
 '''
  Remember that really annoying game "7 Boom"? You start counting, and any time you reach a number divisible by 7
- you say "boom" instead of the number.
+ you say "boom" instead of the number? No? Well we didn't have fancy PlayStations or Xboxes back in my day!
  Let's code that game! Here are the guidelines:
 
  Create a variable to hold 7 - that way we can easily modify it to be 8 Boom or 21 Boom.
  Create a counter variable as above. Feel free to reuse the above, but make sure you set it to 0!
  Create a while loop that has an IF statement in it.
- Each time around, the while loop should ask "is counter divisible by 7? if so, print BOOM! If not, print the number.
+ Each time around, the while loop should ask "is counter perfectly divisible by 7? if so, print BOOM! If not, print the number.
 
  Play this game until you hit 100.
 
@@ -96,7 +95,7 @@ counter = 0
 
 
 '''
- Great! Let's make one more.
+ Great! Let's make one more loop.
  Before we start, a very common way to setup While loops is to use True/False as the break points.
 
  You might say:
@@ -183,7 +182,7 @@ pressed = []
 #         x += 1
 #         print keys
 #     if len(pressed) > 2:
-#         'All done!'
+#         'All done! The keys that were pressed are ' + str(keys[0]) + ' and ' + str(keys[1])
 #         break
 
 '''

@@ -1,3 +1,5 @@
+__author__ = "Ben Reuveni - ben.reuveni@gmail.com"
+
 # Import relevant libraries
 from psychopy import data
 import numpy as np  # whole numpy lib is available, prepend 'np.'
@@ -8,6 +10,9 @@ OK!
 Now that we've covered variables, IFs FORs, WHILEs and FUNCTIONS, we have all the tools we need to build our experiment!
 
 The last bit we need to cover first is how to load files and how to write to files. These are made very easy by Python.
+
+Note that there are many many ways to load in a file, and the particular method you end up using will depend on the type of
+data you want to load. In this case, we want to load a file that has both numbers and strings.
 
 To load a file:
 '''
@@ -35,8 +40,16 @@ For example:
 
 data = open('dataFile.txt', 'w')
 
+'''
+ Notice the 'w' in that command. 'w' is for 'write'. You can also specify 'r', 'r+', 'rw', 'a', etc. The online documentation
+ is great, so check it out. One thing I will say is that it's really important to understand what the different arguments
+ will do to your file. For example, using 'w' will actually empty out the file if there's anything in it. So if I just wanted
+ to open a file so I could read it later, I would never use 'w' because that would wipe the file! Instead, I'd use 'r'.
 
-# now that we have a new *empty* file, we can start adding data to it.
+ If I wanted to 'append' to an existing file, I'd use 'a', and so on. One little letter can really impact your data, so take care.
+
+ OK, now that we have a new *empty* file, we can start adding data to it.
+'''
 
 # data.write(str(1)+'\n')
 # data.write('a,b,c\n')
@@ -46,17 +59,19 @@ data = open('dataFile.txt', 'w')
 # data.write('%i %f %s\n' %(1, 1.11, 'd'))
 
 '''
-Let's break that down. What we see is a series of % values, and then a % and a reference. What this means is:
+Let's break that down. What we see is a series of % arguments, and then a % and a reference. What this means is:
+
+i = integer, f = float, s = string (there are others, but these are the main ones).
 
 "I want an [integer] followed by a space, followed by a [float] followed by a space, followed by a [string] followed by
 a [new line]. We then specify what particular [integer][float][string] we want. Note that these do not have to be static
 and can be variables.
 '''
-i = 1
+i = [1,2,3]
 f = 0.9975
 s = "string"
 
-# data.write('%i %f %s\n' %(i, f, s))
+# data.write('%i %f %s\n' %(i[0], f, s))
 
 '''
 It is important to note that once you specify the type of thing you're going to write (ie: %i) you MUST pass it an
